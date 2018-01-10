@@ -1,0 +1,12 @@
+.my-input{padding:8px;border:none;border-bottom:1px solid #ccc;width:100%}
+
+@keyframes example{
+    0%   {left:-100px; }
+    
+    100% { left:-900px; }
+}
+#cart{
+    position: relative;
+    animation: example 0.5s linear 0s  ;
+    left: -900px;
+}

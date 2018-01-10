@@ -1,0 +1,59 @@
+
+
+h6{
+    margin-top: 50px
+}
+
+
+@keyframes yellowStar{
+    from{
+        transform: scale(30) rotate(360deg);
+       
+    }
+    to{
+        transform: scale(1)  rotate(0deg);
+        
+    }
+}
+
+.yellowStarAnimation{
+    position: absolute;
+    animation-name: yellowStar;
+    animation-duration: 0.85s;
+    
+    
+}
+
+.rel{
+    position: relative
+}
+.rel1{
+    position: relative;
+    left: 20px
+}
+.rel2{
+    position: relative;
+    left: 10px
+}
+.rel3{
+    position: relative;
+    left:0px
+}
+.rel4{
+    position: relative;
+    left:80px
+}
+
+
+.ab1{
+    left: 65px
+}
+.ab2{
+    left: 85px
+}
+.ab3{
+    left:105px
+}
+.ab4{
+    left: 125px
+}

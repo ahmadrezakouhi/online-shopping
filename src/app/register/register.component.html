@@ -1,0 +1,55 @@
+<div
+ class=" w3-content w3-margin-bottom 
+  w3-margin-top w3-card-2 w3-animate-left" style="max-width:900px" dir="rtl">
+  <div class="w3-container w3-blue w3-padding-large w3-xlarge">ثبت نام </div>
+ <form action="" class="w3-margin" #personForm="ngForm" (ngSubmit)="onSubmit()">
+     <div class="w3-padding-32">
+
+         <label for="name" class="w3-text-blue " >نام:</label>
+         <input id=name type="text" 
+         class="w3-input w3-border w3-hover-light-grey" name="name" [(ngModel)]="person.firstName"style="">
+     </div>
+  
+     <div class="w3-padding-32">
+
+         <label for="" class="w3-text-blue ">نام خانوادگی:</label>
+         <input type="text" 
+         class="w3-input w3-border w3-hover-light-grey " style=""name="lastName" [(ngModel)]="person.lastName">
+     </div>
+     <div class="w3-padding-32">
+
+         <label for="" class="w3-text-blue ">پست الکترونیکی:</label>
+         <input type="email" 
+         class="w3-input w3-border  w3-hover-light-grey" style="" dir="ltr" name="email" [(ngModel)]="person.email">
+     </div>
+     <div class="w3-padding-16">
+        <p class="w3-text-blue">جنسیت:</p>
+<input type="radio" class="w3-radio" name="gender" value="مرد" 
+ name="gender" [(ngModel)]="person.gender">
+<label for="male">مرد</label>
+<input type="radio" class="w3-radio" name="gender" value="زن" name="gender" [(ngModel)]="person.gender">
+<label for="male">
+    زن
+    </label>
+
+     </div>
+     <div class="w3-padding-32">
+     <label for="" class="w3-text-blue">تلفن:</label>
+         <input type="" class="w3-input w3-border w3-hover-light-grey" dir="ltr" name="phone" [(ngModel)]="person.phone">
+     </div>
+<div class="w3-padding-32">
+<label for="" class="w3-text-blue">آدرس:</label>
+    <input type="text" class="w3-input w3-border w3-hover-light-grey" name="address" [(ngModel)]="person.address">
+</div>
+<div class="w3-padding-32">
+<label for="" class="w3-text-blue">کلمه عبور:</label>
+    <input type="password" class="w3-input w3-border w3-hover-light-grey" dir="ltr" name="password" [(ngModel)]="person.password">
+</div>
+
+
+    <button type="submit" class="w3-button w3-padding-medium 
+     w3-blue w3-margin-bottom" [disabled]="!personForm.form.valid">ثبت نام</button>
+
+</form>
+
+</div>

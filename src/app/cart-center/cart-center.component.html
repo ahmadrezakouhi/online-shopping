@@ -1,0 +1,24 @@
+<div class="w3-content w3-padding-large " style="max-width:1350px" dir="rtl" >
+
+<div class="w3-row ">
+  <div class="w3-threequarter w3-margin-top ">
+    <router-outlet></router-outlet>
+  </div>
+      <div class="w3-quarter w3-card-2 w3-bar-block w3-animate-top">
+        
+        <h5 class="w3-opacity w3-padding w3-medium w3-display-container">{{name.firstName+' '+name.lastName}}
+      <img class="w3-left w3-margin-bottom  w3-display-left" src="../assets/images/logo/person.png" width="50px"
+      height="50px">
+          
+        </h5>
+        <a class="w3-button w3-block w3-win8-lime w3-right-align " [routerLink]="['/cart-center/cart']" routerLinkActive="w3-red">سبد خرید</a>
+      <a class="w3-button w3-block w3-win8-lime w3-right-align" [routerLink]="['/cart-center']" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="w3-red">مشخصات</a>
+      <a class="w3-button w3-block w3-win8-lime w3-right-align" [routerLink]="['/cart-center/change-password']"
+       routerLinkActive="w3-red">تغییر رمز</a>
+      <a class="w3-button w3-block w3-win8-lime w3-right-align" (click)="logout()" >خروج</a>
+      </div>
+</div>
+
+
+</div>
+ 

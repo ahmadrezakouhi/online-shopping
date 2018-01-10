@@ -1,0 +1,65 @@
+<div class="w3-content w3-margin w3-row-padding" style="max-width:1400px" dir="rtl">
+
+<div class="w3-threequarter w3-card-4">
+<div class="w3-row-padding">
+
+<a class="w3-quarter w3-hover-shadow w3-padding  " *ngFor="let product of products" 
+[routerLink]="['/details',product.productId]" style="text-decoration: none" target="_blank">
+
+<img [src]='"../assets/images/laptops/"+product.imageSource' alt=""
+width="200px" height="200px" class="w3-animate-zoom">
+<hr class="w3-opacity w3-black" style="height:2px">
+<h5 class="w3-small w3-opacity">{{+'لپ تاپ '+product.productName+' مدل '+product.productType}}</h5>
+<p class="w3-text-green">قیمت:<b>{{f.formatNumber(product.price) }}</b></p>
+</a>
+
+
+
+
+
+</div>
+
+<div class="w3-text-teal w3-xxxlarge" style="margin-top:100px" [hidden]="show">
+نا موجود
+</div>
+
+</div>
+
+<div class="w3-quarter w3-right">
+    <input type="text" class="w3-input w3-border " style="margin-bottom:20px" #searchBox (keyup.enter)="search(searchBox.value)" placeholder="جستوجو کنید ..."
+    
+    >
+    
+<button class="w3-button w3-block w3-blue w3-border" 
+onclick="w3.toggleClass('#option','w3-hide');w3.addClass('#option','w3-animate-zoom')" style="">بر اساس نوع</button>
+<div id='option'class="w3-hide w3-row " style="margin-top:20px;">
+    <div class="w3-third w3-right" >
+
+<label class="container " >acer
+    <input type="checkbox" checked="checked" (change)="$event.target.checked?search('ایسر'):search('اپل')">
+    <span class="checkmark"></span>
+</label>
+<label class="container ">apple
+    <input type="checkbox" checked="checked" (change)="$event.target.checked?search('اپل'):search('ایسر')">
+    <span class="checkmark"></span>
+</label>
+</div>
+
+
+
+
+
+</div>
+
+<button class="w3-button w3-block w3-blue w3-border " style="animation-duration: 1.3s" onclick="w3.toggleClass('#range','w3-hide')">قیمت</button>
+<button class="w3-button w3-block w3-blue w3-border " style="animation-duration: 1.6s" onclick="w3.toggleClass('#range','w3-hide')">قیمت</button>
+<button class="w3-button w3-block w3-blue w3-border " style="animation-duration: 1.9s" onclick="w3.toggleClass('#range','w3-hide')">قیمت</button>
+<button class="w3-button w3-block w3-blue w3-border " style="animation-duration:2.1s" onclick="w3.toggleClass('#range','w3-hide')">قیمت</button>
+<button class="w3-button w3-block w3-blue w3-border " style="animation-duration: 2.4s" onclick="w3.toggleClass('#range','w3-hide')">قیمت</button>
+<button class="w3-button w3-block w3-blue w3-border " style="animation-duration: 2.7s" onclick="w3.toggleClass('#range','w3-hide')">قیمت</button>
+
+
+</div>
+{{s}}
+
+</div>

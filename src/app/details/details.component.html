@@ -1,0 +1,349 @@
+<div class="w3-content w3-card-2 w3-margin-top"style="max-width:1300px" dir="rtl" >
+
+<div class="w3-row-padding">
+  <div class="w3-col l5 w3-padding-32 w3-right  ">
+    <img [src]='"../../assets/images/laptops/"+product[0].imageSource'alt="" 
+    width="80%" height="80%">
+  </div>
+
+
+  <div class="w3-col l7 w3-padding-32">
+<div class="w3-light-grey w3-padding-16"> 
+  <h5 class="w3-padding-small w3-opacity-min">
+    لپ تاپ 15 اينچی {{product[0].productName}} مدل {{product[0].productType}}
+
+  </h5>
+  <div class="w3-left w3-xlarge w3-animate-zoom " dir="ltr" >
+  
+    <!-- <span  *ngFor="let star of stars" [ngClass]="star?'w3-text-yellow  ':'w3-text-grey '"style="" >&#9733;</span> -->
+   <span [ngClass]="stars[0]?'w3-text-yellow yellowStarAnimation ab':'w3-text-grey rel'">&#9733;</span>
+      <span [ngClass]="stars[1]?'w3-text-yellow yellowStarAnimation ab1':'w3-text-grey rel1 '"  style="animation-duration:1.5s ">&#9733;</span>
+        <span [ngClass]="stars[2]?'w3-text-yellow yellowStarAnimation ab2':'w3-text-grey rel2'" style="animation-duration:2s ">&#9733;</span>
+  <span [ngClass]="stars[3]?'w3-text-yellow yellowStarAnimation ab3':'w3-text-grey rel3'" style="animation-duration:2.5s ">&#9733;</span>
+  <span [ngClass]="stars[4]?'w3-text-yellow yellowStarAnimation ab4':'w3-text-grey rel4'"  style="animation-duration:3s ">&#9733;</span>
+
+
+  </div>
+</div>
+
+<div class="w3-row-padding">
+
+  <div class="w3-col l6 w3-right">
+<p class="w3-small ">گارانتي يکپارچه 2 ساله ايسوس (سازگار، حامي(ويستا) و آواژنگ)
+
+</p>
+<div class="w3-small w3-opacity w3-padding-32">
+
+  <p><img  src="../assets/images/logo/money.png" width="20px" height="20px">فروش توسط آنلاین شاپینگ</p>
+  <p><img src="../assets/images/logo/package.png" width="20px" height="20px">بسته بندی و ارسال توسط آنلاین شاپینگ</p>
+  <p><img src="../assets/images/logo/post-car.jpeg" width="20px" height="20px">آماده ارسال در انبار آنلاین شاپینگ</p>
+
+</div>
+
+
+  </div>
+  <div class="w3-col l6 w3-opacity w3-tiny" >
+<ul style="list-style-type:none">
+<li>صفحه نمایش:&emsp;<span class="w3-opacity-min">{{product[1].screenSize}} </span></li>
+<li>پردازنده گرافیکی:&emsp;<span class="w3-opacity-min">{{product[1].gpuCompany}} </span></li>
+<li>پردازنده:&emsp;<span class="w3-opacity-min">{{product[1].cpuCompany+product[1].cpuFrequency}} </span></li>
+<li>میزان رم:&emsp;<span class="w3-opacity-min">{{product[1].ramCapacity}}</span></li>
+</ul>
+
+  </div>
+</div>
+
+
+
+<div class="">
+
+ 
+<button class="w3-btn w3-green w3-left w3-ripple" (click)="buy(product[0].productId)">خرید</button>
+  
+    <h4 class="">قیمت:
+      <span class="w3-text-green  w3-xlarge">
+        <b>{{f.formatNumber(product[0].price)}}
+        </b>
+        <span class="w3-medium">تومان</span>
+      </span>
+    </h4>
+ 
+</div>
+
+
+
+  </div>
+</div>
+
+
+<hr class="w3-grey"style="height:1.5px">
+
+
+<div class="w3-margin-top w3-margin-bottom">
+<div class="w3-bar w3-grey w3-large w3-opacity-min">
+  <button  id="desButton"  class="w3-white w3-bar-item w3-button w3-right w3-padding-large  w3-topbar w3-hover-border-red w3-border-grey"
+   onclick="openTabDetaile('des','desButton')">توضیحات</button>
+  <button id="detButton"  class="w3-bar-item w3-button w3-right w3-padding-large w3-topbar w3-hover-border-red w3-border-grey"
+   onclick="openTabDetaile('det','detButton')">جزئیات</button>
+  <button  id="comButton" class="w3-bar-item w3-button w3-right w3-padding-large w3-topbar w3-hover-border-red w3-border-grey" 
+  onclick="openTabDetaile('com','comButton')">نظرهای شما</button>
+</div>
+<div class="w3-container">
+<div id="des" class="details ">
+ 
+  <p class="w3-opacity w3-small">{{product[0].description}}</p>
+</div>
+
+<div id="det" class="details" style="display:none">
+ 
+  <h6 class="w3-opacity-min ">
+    <span class="w3-text-orange">
+      &#9666;&emsp;</span>مشخصات فیزیکی</h6>
+
+      <ul class="w3-small w3-opacity "style="list-style-type:none">
+        <li class="w3-row-padding w3-orange w3-margin-top">
+          <div class="w3-col l10 w3-light-grey w3-padding">{{product[1].size}}</div>
+          <div class="w3-col l2 w3-grey w3-padding ">ابعاد</div>
+        </li>
+        <li class="w3-row-padding w3-orange w3-margin-top">
+          <div class="w3-col l10 w3-light-grey w3-padding">{{product[1].weight}}</div>
+          <div class="w3-col l2 w3-grey w3-padding ">وزن</div>
+        </li>
+      </ul>
+
+
+  <h6 class="w3-opacity ">
+    <span class="w3-text-red">
+      &#9666;&emsp;</span> پردازنده مرکزي </h6>
+
+      <ul class="w3-small w3-opacity "style="list-style-type:none">
+        <li class="w3-row-padding w3-red w3-margin-top">
+          <div class="w3-col l10 w3-light-grey w3-padding">{{product[1].cpuCompany}}</div>
+          <div class="w3-col l2 w3-grey w3-padding ">سازنده پردازنده</div>
+        </li>
+        <li class="w3-row-padding w3-red w3-margin-top">
+          <div class="w3-col l10 w3-light-grey w3-padding">{{product[1].cpuSeries}}</div>
+          <div class="w3-col l2 w3-grey w3-padding ">سری پردازنده</div>
+        </li>
+          <li class="w3-row-padding w3-red w3-margin-top">
+            <div class="w3-col l10 w3-light-grey w3-padding">{{product[1].cpuType}}</div>
+            <div class="w3-col l2 w3-grey w3-padding ">مدل پردازنده</div>
+          </li>
+            <li class="w3-row-padding w3-red w3-margin-top">
+              <div class="w3-col l10 w3-light-grey w3-padding">{{product[1].cpuSpeed}}</div>
+              <div class="w3-col l2 w3-grey w3-padding ">محدوده سرعت پردازنده</div>
+            </li>
+              <li class="w3-row-padding w3-red w3-margin-top">
+                <div class="w3-col l10 w3-light-grey w3-padding">{{product[1].cpuFrequency}}</div>
+                <div class="w3-col l2 w3-grey w3-padding ">فرکانس پردازنده</div>
+              </li>
+                <li class="w3-row-padding w3-red w3-margin-top">
+                  <div class="w3-col l10 w3-light-grey w3-padding">{{product[1].cpuCache}}</div>
+                  <div class="w3-col l2 w3-grey w3-padding ">حافظه کش</div>
+                </li>
+      </ul>
+
+<h6 class="w3-opacity-min ">
+  <span class="w3-text-blue">
+    &#9666;&emsp;</span>حافظه RAM</h6>
+
+<ul class="w3-small w3-opacity " style="list-style-type:none">
+  <li class="w3-row-padding w3-blue w3-margin-top">
+    <div class="w3-col l10 w3-light-grey w3-padding">{{product[1].ramCapacity}}</div>
+    <div class="w3-col l2 w3-grey w3-padding ">ظرفیت حافظه</div>
+  </li>
+  <li class="w3-row-padding w3-blue w3-margin-top">
+    <div class="w3-col l10 w3-light-grey w3-padding">{{product[1].ramType}}</div>
+    <div class="w3-col l2 w3-grey w3-padding ">نوع حافظه</div>
+  </li>
+</ul>
+
+
+<h6 class="w3-opacity-min ">
+  <span class="w3-text-green">
+    &#9666;&emsp;</span>حافظه داخلی</h6>
+
+<ul class="w3-small w3-opacity " style="list-style-type:none">
+  <li class="w3-row-padding w3-green w3-margin-top">
+    <div class="w3-col l10 w3-light-grey w3-padding">{{product[1].internalMemoryCapacity}}</div>
+    <div class="w3-col l2 w3-grey w3-padding ">ظرفیت حافظه داخلی</div>
+  </li>
+  <li class="w3-row-padding w3-green w3-margin-top">
+    <div class="w3-col l10 w3-light-grey w3-padding">{{product[1].internalMemoryType}}</div>
+    <div class="w3-col l2 w3-grey w3-padding ">نوع حافظه داخلی</div>
+  </li>
+</ul>
+
+<h6 class="w3-opacity-min ">
+  <span class="w3-text-pink">
+    &#9666;&emsp;</span>پردازنده گرافیکی</h6>
+
+<ul class="w3-small w3-opacity " style="list-style-type:none">
+  <li class="w3-row-padding w3-pink w3-margin-top">
+    <div class="w3-col l10 w3-light-grey w3-padding">{{product[1].gpuCompany}}</div>
+    <div class="w3-col l2 w3-grey w3-padding ">سازنده پردازنده گرافیکی</div>
+  </li>
+  <li class="w3-row-padding w3-pink w3-margin-top">
+    <div class="w3-col l10 w3-light-grey w3-padding">{{product[1].gpuType}}</div>
+    <div class="w3-col l2 w3-grey w3-padding ">مدل پردازنده گرافیکی</div>
+  </li>
+  <li class="w3-row-padding w3-pink w3-margin-top">
+    <div class="w3-col l10 w3-light-grey w3-padding">{{product[1].gpuMemory}}</div>
+    <div class="w3-col l2 w3-grey w3-padding ">حافظه پردازنده گرافیکی</div>
+  </li>
+
+</ul>
+
+<h6 class="w3-opacity-min ">
+  <span class="w3-text-cyan">
+    &#9666;&emsp;</span>حافظه داخلی</h6>
+
+<ul class="w3-small w3-opacity " style="list-style-type:none">
+  <li class="w3-row-padding w3-cyan w3-margin-top">
+    <div class="w3-col l10 w3-light-grey w3-padding">{{product[1].screenSize}}</div>
+    <div class="w3-col l2 w3-grey w3-padding ">اندازه صفحه نمایش</div>
+  </li>
+  <li class="w3-row-padding w3-cyan w3-margin-top">
+    <div class="w3-col l10 w3-light-grey w3-padding">{{product[1].screenType}}</div>
+    <div class="w3-col l2 w3-grey w3-padding ">نوع صفحه نمایش</div>
+  </li>
+  <li class="w3-row-padding w3-cyan w3-margin-top">
+    <div class="w3-col l10 w3-light-grey ">
+      <span class="w3-text-green w3-xlarge" *ngIf="product[1].matteDisplay==1">&#x2714;</span>
+      <span class="w3-text-red w3-xlarge" *ngIf="product[1].matteDisplay==0">&#x2718;</span>
+    </div>
+    <div class="w3-col l2 w3-grey w3-padding ">صفحه نمایش مات</div>
+  </li>
+ 
+    <li class="w3-row-padding w3-cyan w3-margin-top">
+      <div class="w3-col l10 w3-light-grey ">
+        <span class="w3-text-green w3-xlarge" *ngIf="product[1].screenTouch==1" >&#x2714;</span>
+        <span class="w3-text-red w3-xlarge" *ngIf="product[1].screenTouch==0">&#x2718;</span>
+      </div>
+      <div class="w3-col l2 w3-grey w3-padding " style="max-height:100%">صفحه نمایش لمسی</div>
+    </li>
+</ul>
+
+<h6 class="w3-opacity-min ">
+  <span class="w3-text-blue-grey">
+    &#9666;&emsp;</span>امکانات</h6>
+
+<ul class="w3-small w3-opacity " style="list-style-type:none">
+    <li class="w3-row-padding w3-blue-grey w3-margin-top">
+      <div class="w3-col l10 w3-light-grey ">
+        <span class="w3-text-green w3-xlarge" *ngIf="product[1].opticalDrive==1" >&#x2714;</span>
+        <span class="w3-text-red w3-xlarge" *ngIf="product[1].opticalDrive==0">&#x2718;</span>
+      </div>
+      <div class="w3-col l2 w3-grey w3-padding ">درایو نوری</div>
+    </li>
+      <li class="w3-row-padding w3-blue-grey w3-margin-top">
+        <div class="w3-col l10 w3-light-grey ">
+          <span class="w3-text-green w3-xlarge" *ngIf="product[1].webCam==1">&#x2714;</span>
+          <span class="w3-text-red w3-xlarge" *ngIf="product[1].webCam==0">&#x2718;</span>
+        </div>
+        <div class="w3-col l2 w3-grey w3-padding ">وبکم</div>
+      </li>
+
+  <li class="w3-row-padding w3-blue-grey w3-margin-top">
+    <div class="w3-col l10 w3-light-grey w3-padding">{{product[1].webCamDescripe}}</div>
+    <div class="w3-col l2 w3-grey w3-padding ">توضیحات وبکم</div>
+  </li>
+  <li class="w3-row-padding w3-blue-grey w3-margin-top">
+    <div class="w3-col l10 w3-light-grey w3-padding">
+     {{product[1].speaker}}
+    </div>
+    <div class="w3-col l2 w3-grey w3-padding ">بلندگوها</div>
+  </li>
+    <li class="w3-row-padding w3-blue-grey w3-margin-top">
+      <div class="w3-col l10 w3-light-grey ">
+        <span class="w3-text-green w3-xlarge" *ngIf="product[1].keyboard==1">&#x2714;</span>
+        <span class="w3-text-red w3-xlarge" *ngIf="product[1].keyboard==0">&#x2718;</span>
+      </div>
+      <div class="w3-col l2 w3-grey w3-padding ">کیبورد با پس زمینه روشن</div>
+    </li>
+
+    <li class="w3-row-padding w3-blue-grey w3-margin-top">
+      <div class="w3-col l10 w3-light-grey w3-padding">{{product[1].touchPad}}</div>
+      <div class="w3-col l2 w3-grey w3-padding ">صفحه لمسی</div>
+    </li>
+
+
+<li class="w3-row-padding w3-blue-grey w3-margin-top">
+  <div class="w3-col l10 w3-light-grey ">
+    <span class="w3-text-green w3-xlarge" *ngIf="product[1].fingerprintScanner==1">&#x2714;</span>
+    <span class="w3-text-red w3-xlarge" *ngIf="product[1].fingerprintScanner==0">&#x2718;</span>
+  </div>
+  <div class="w3-col l2 w3-grey w3-padding ">کیبورد با پس زمینه روشن</div>
+</li>
+<li class="w3-row-padding w3-blue-grey w3-margin-top">
+  <div class="w3-col l10 w3-light-grey ">
+    <span class="w3-text-green w3-xlarge" *ngIf="product[1].cardReader==1">&#x2714;</span>
+    <span class="w3-text-red w3-xlarge" *ngIf="product[1].cardReader==0">&#x2718;</span>
+  </div>
+  <div class="w3-col l2 w3-grey w3-padding ">کیبورد با پس زمینه روشن</div>
+</li>
+
+<li class="w3-row-padding w3-blue-grey w3-margin-top">
+  <div class="w3-col l10 w3-light-grey w3-padding">{{product[1].modem}}</div>
+  <div class="w3-col l2 w3-grey w3-padding ">صفحه لمسی</div>
+</li>
+
+</ul>
+
+
+</div>
+
+<div id="com" class="details" style="display:none">
+    
+ 
+    
+  <div >
+
+      <span class="w3-xxlarge" *ngFor="let star of rateArray;let i =index" [ngClass]="star?'w3-text-yellow':'w3-text-grey'"(click)="yourRating(i+1)" style="cursor:pointer">&#9733;</span>
+
+       
+  </div>
+ <div class="w3-card-4">
+<div class="w3-win8-lime w3-padding-16 w3-panel">
+ahmad
+</div>
+<div class="w3-panel w3-padding-32 w3-opacity w3-medium">
+اسم من هست احمد رضا کوهی علی آبادی
+</div>
+ </div>
+</div>
+
+
+
+</div>
+</div>
+
+
+<div class="w3-modal" [style.display]="showModalDanger">
+  <div class="w3-modal-content w3-red  w3-animate-top" style="max-width:350px">
+    <div class="w3-panel">
+      <!-- <span (click)="showModalDanger='none'" class="w3-button w3-display-left w3-xlarge">&times;</span> -->
+      <p class=" w3-text-white w3-center" dir="rtl">
+پیش از این به سبد کالای شما افزوده شده است ,امکان افزودن مجدد میسر نیست.
+      </p>
+    </div>
+  </div>
+</div>
+<div  class="w3-modal" [style.display]="showModalOk">
+  <div class="w3-modal-content w3-green  w3-animate-top"style="max-width:350px">
+    <div class="w3-panel">
+      <!-- <span (click)="showModalOk='none'" class="w3-button w3-display-left w3-xlarge">&times;</span> -->
+      <p class=" w3-text-white w3-center" dir="rtl">
+به سبد کالای شما افزوده شد.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>

@@ -1,0 +1,36 @@
+<div class="w3-margin-right" dir="rtl">
+<p class="w3-opacity-min w3-large" >
+  <img class="" src="../assets/images/logo/cart.png" 
+  height="50px" width="50px" id="cart" alt="">سبد خرید</p>
+<hr class="w3-black w3-opacity-max" style="height:2px">
+
+<div class="w3-row w3-margin-bottom w3-opacity-min w3-bottombar w3-border-red" *ngFor="let cart of carts">
+  
+ 
+  <div class="w3-col l1 w3-display-container" style="height:170px">
+    <a class="w3-display-middle w3-button w3-hover-red" (click)="delete(cart.cartId)">X</a>
+  </div>
+  <div class="w3-col l2 w3-display-container " style="height:150px">
+<h6 class="w3-display-middle">{{f.formatNumber(cart.price*cart.quantity)}}</h6>
+  </div>
+  <div class="w3-col l2 w3-display-container" style="height:150px">
+<h6 class="w3-display-middle">{{cart.quantity}}</h6>
+  </div>
+  <div class="w3-col l2 w3-display-container" style="height:150px">
+    <h6 class="w3-display-middle">{{f.formatNumber(cart.price)}}</h6>
+  </div>
+<div class="w3-col l2 w3-display-container" style="height:150px">
+  <h6 class="w3-display-middle w3-small"> لپ تاپ 15 اينچی {{cart.productName}} مدل {{cart.productType}}
+</h6>
+</div>
+  
+<div class="w3-col l3">
+  
+  <img [src]="'../../../assets/images/laptops/'+cart.imageSource" width="75%" height="75%"alt="">
+</div>
+
+  
+  </div>
+ 
+</div>
+  
